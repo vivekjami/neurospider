@@ -1,0 +1,23 @@
+[package]
+name = "neurospider-benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+criterion = "0.5"
+tokio = { version = "1.0", features = ["full"] }
+neurospider-core = { path = "../crates/neurospider-core" }
+neurospider-storage = { path = "../crates/neurospider-storage" }
+neurospider-ai = { path = "../crates/neurospider-ai" }
+
+[[bench]]
+name = "crawling_benchmarks"
+harness = false
+
+[[bench]]
+name = "storage_benchmarks"
+harness = false
+
+[[bench]]
+name = "ai_benchmarks"
+harness = false

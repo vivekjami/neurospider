@@ -30,3 +30,6 @@ certificates/
 # Build artifacts
 dist/
 build/
+
+
+.idea/
