@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - NeuroSpider{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h2>Crawl Dashboard</h2>
+        <button class="btn btn-primary" id="new-crawl-btn">New Crawl</button>
+    </div>
+    
+    <div class="dashboard-grid">
+        <div class="stats-card">
+            <h3>Active Crawls</h3>
+            <div class="stat-number" id="active-crawls">0</div>
+        </div>
+        
+        <div class="stats-card">
+            <h3>Pages Crawled</h3>
+            <div class="stat-number" id="pages-crawled">0</div>
+        </div>
+        
+        <div class="stats-card">
+            <h3>Success Rate</h3>
+            <div class="stat-number" id="success-rate">0%</div>
+        </div>
+        
+        <div class="stats-card">
+            <h3>Queue Size</h3>
+            <div class="stat-number" id="queue-size">0</div>
+        </div>
+    </div>
+    
+    <div class="crawl-list">
+        <h3>Recent Crawls</h3>
+        <table class="crawl-table">
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>URL</th>
+                    <th>Status</th>
+                    <th>Progress</th>
+                    <th>Started</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="crawl-list-body">
+                <!-- Dynamic content -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
