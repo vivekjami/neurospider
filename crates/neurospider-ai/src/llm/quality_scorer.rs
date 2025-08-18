@@ -1,1 +1,0 @@
-// Content quality scorer implementation

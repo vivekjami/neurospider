@@ -2,27 +2,57 @@
 resolver = "2"
 members = [
     "crates/neurospider-core",
-    "crates/neurospider-ai", 
-    "crates/neurospider-security",
-    "crates/neurospider-storage",
-    "crates/neurospider-api",
-    "crates/neurospider-cli",
     "crates/neurospider-web",
 ]
 
 [workspace.dependencies]
-tokio = { version = "1.0", features = ["full"] }
-reqwest = { version = "0.11", features = ["json", "stream"] }
-tonic = "0.10"
-prost = "0.12"
-foundationdb = "0.8"
-pulsar = "6.0"
-tracing = "0.1"
+# Core async runtime
+tokio = { version = "1.35", features = ["full"] }
+tokio-util = { version = "0.7", features = ["full"] }
+
+# HTTP client and server
+reqwest = { version = "0.12", features = ["json", "stream", "gzip"] }
+hyper = { version = "1.6", features = ["full"] }
+tower = { version = "0.5", features = ["full"] }
+tower-http = { version = "0.6", features = ["full"] }
+
+# Serialization and protocols
 serde = { version = "1.0", features = ["derive"] }
-uuid = { version = "1.0", features = ["v4", "serde"] }
-clap = "4.0"
+serde_json = "1.0"
+tonic = "0.10"        # gRPC framework
+prost = "0.12"        # Protocol buffers
+prost-types = "0.12"
+
+# Database and storage
+foundationdb = "0.8"
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"] }
+
+# Message streaming
+pulsar = "6.0"
+
+# Observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
+opentelemetry = { version = "0.21", features = ["metrics", "trace"] }
+opentelemetry-otlp = "0.14"
+metrics = "0.21"
+metrics-exporter-prometheus = "0.12"
+
+# Security and cryptography  
 chacha20poly1305 = "0.10"
 ed25519-dalek = "2.0"
 argon2 = "0.5"
 rand = "0.8"
 zeroize = "1.6"
+
+# Utilities
+uuid = { version = "1.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4.0", features = ["derive"] }
+anyhow = "1.0"
+thiserror = "2.0"
+
+# Development and testing
+criterion = { version = "0.7", features = ["html_reports"] }
+proptest = "1.0"
+wiremock = "0.6"

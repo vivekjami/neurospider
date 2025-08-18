@@ -1,1 +1,0 @@
-// Sitemap parser implementation

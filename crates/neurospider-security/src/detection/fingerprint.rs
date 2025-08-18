@@ -1,1 +1,0 @@
-// Fingerprint detection implementation

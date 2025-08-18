@@ -2,10 +2,27 @@
 name = "neurospider-core"
 version = "0.1.0"
 edition = "2021"
+description = "Core crawling engine for NeuroSpider"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
+# Workspace dependencies
 tokio = { workspace = true }
 reqwest = { workspace = true }
-tracing = { workspace = true }
 serde = { workspace = true }
+tracing = { workspace = true }
 uuid = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Core-specific dependencies
+url = "2.4"
+robots_txt = "0.7"
+scraper = "0.24"
+html5ever = "0.35"
+
+[dev-dependencies]
+criterion = { workspace = true }
+proptest = { workspace = true }
+wiremock = { workspace = true }
+tokio-test = "0.4"
