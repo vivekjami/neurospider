@@ -1,30 +1,25 @@
 [package]
-name = "neurospider-web"
+name = "neurospider-security"
 version = "0.1.0"
 edition = "2021"
-description = "Web dashboard for NeuroSpider"
+description = "Security and cryptography for NeuroSpider"
 license = "MIT OR Apache-2.0"
-
-[[bin]]
-name = "neurospider-web"
-path = "src/main.rs"
 
 [dependencies]
 # Workspace dependencies
-tokio = { workspace = true }
 serde = { workspace = true }
-serde_json = { workspace = true }
 tracing = { workspace = true }
 uuid = { workspace = true }
 anyhow = { workspace = true }
 thiserror = { workspace = true }
+chrono = { workspace = true }
 
-# Web-specific dependencies
-axum = "0.7"
-axum-extra = "0.9"
-tower = { workspace = true }
-tower-http = { workspace = true }
-askama = "0.12"
+# Security-specific dependencies
+chacha20poly1305 = { workspace = true }
+ed25519-dalek = { workspace = true }
+argon2 = { workspace = true }
+rand = { workspace = true }
+zeroize = { workspace = true }
 
 [dev-dependencies]
 criterion = { workspace = true }

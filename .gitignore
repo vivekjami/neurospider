@@ -1,35 +1,11 @@
-# Rust
-/target/
+/target
 Cargo.lock
-**/*.rs.bk
-
-# IDE
-.vscode/
+.env
+*.log
+.DS_Store
 .idea/
+.vscode/
 *.swp
 *.swo
+*~
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Environment
-.env
-.env.local
-
-# Security
-private_keys/
-certificates/
-*.pem
-*.key
-
-# Build artifacts
-dist/
-build/
-
-
-.idea/

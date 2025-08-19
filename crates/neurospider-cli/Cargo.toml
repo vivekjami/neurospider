@@ -1,12 +1,12 @@
 [package]
-name = "neurospider-web"
+name = "neurospider-cli"
 version = "0.1.0"
 edition = "2021"
-description = "Web dashboard for NeuroSpider"
+description = "Command line interface for NeuroSpider"
 license = "MIT OR Apache-2.0"
 
 [[bin]]
-name = "neurospider-web"
+name = "neurospider"
 path = "src/main.rs"
 
 [dependencies]
@@ -18,13 +18,12 @@ tracing = { workspace = true }
 uuid = { workspace = true }
 anyhow = { workspace = true }
 thiserror = { workspace = true }
+clap = { workspace = true }
 
-# Web-specific dependencies
-axum = "0.7"
-axum-extra = "0.9"
-tower = { workspace = true }
-tower-http = { workspace = true }
-askama = "0.12"
+# CLI-specific dependencies
+console = "0.15"
+indicatif = "0.17"
+dialoguer = "0.11"
 
 [dev-dependencies]
 criterion = { workspace = true }
