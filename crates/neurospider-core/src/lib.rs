@@ -1,1 +1,0 @@
-//! NeuroSpider Core - High-performance web crawling engine
